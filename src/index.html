@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link href="index.css" rel="stylesheet">
+    <title>Interactive Card Form</title>
+</head>
+
+<body>
+    <main>
+        <section class="">
+
+            <div
+                class="grid absolute bg-[#2f2f2f0c] min-h-[40vh] w-[90%] ml-[5%] mt-[80%] shadow-md shadow-[#19191945]">
+                <form action="" id="cardform" class="flex w-[90%] mt-[10%] mx-auto justify-around">
+                    <div class="grid">
+                        <input type="text" id="cardnumber" placeholder="card number" class="bg-opacity-1 h-10">
+                        <input type="text" id="cardholder" placeholder="cardholder" class="h-10">
+                        <input type="text" id="cvv" placeholder="cvv" class="h-10">
+                    </div>
+                    <div class="grid h-40">
+                        <select id="month" class="h-10">
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        <select id="year" class="h-10">
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                        </select>
+
+                    </div>
+                    <button type="submit" class="">Submit</button>
+                </form>
+            </div>
+            <div id="card"
+                class="grid absolute bg-gradient-to-r from-gray-600 via-gray-400 to-gray-200 w-[80%] h-[20vh] mt-[42%] ml-[10%] ">
+                <div id="inner">
+                    <div id="front">
+                        <div class="mx-auto mt-[20%]">
+                            <h1 id="val">#### #### #### ####</h1>
+                        </div>
+                        <div class="flex justify-around w-[60%] mt-5">
+                            <p>FULL NAME</p>
+                            <div class="flex">
+                                <p>MM</p> / <p>YY</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="back">
+
+                        <h1 id="cvv">CVV</h1>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+
+<script>
+    let cardForm = document.getElementById("cardform");
+    let cvv = document.getElementById("cvv");
+    let front = document.getElementById("front");
+    let back = document.getElementById("back");
+
+    cardForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let cardNumber = document.getElementById("cardnumber");
+        let cardHolder = document.getElementById("cardholder");
+        let cvv = document.getElementById("cvv");
+        let month = document.getElementById("month");
+        let year = document.getElementById("year");
+
+        document.getElementById("val").innerHTML = cardNumber.value
+    });
+
+
+</script>
+
+</html>
